@@ -1,9 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign';
+import { useTranslation } from 'react-i18next';
 
 const Card = ({ navigation, title, description, urlToImage, content, author, url, publishedAt }) => {
 
+  const { t } = useTranslation();
   return (
     <View style={styles.card}>
       <View style={styles.cardContainer}>
@@ -27,16 +29,17 @@ const Card = ({ navigation, title, description, urlToImage, content, author, url
           }}
         >
           <View style={styles.buttonContent}>
-            <Text style={styles.buttonText}>Leer más </Text>
+            <Text style={styles.buttonText}>{t('read-more')} </Text>
             <Icon name="arrowright" size={20} color="#000" style={styles.icon} />
           </View>
         </TouchableOpacity>
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default Card;
+export default Card
+
 const styles = StyleSheet.create({
   card: {
     borderColor: "#5555",
@@ -75,7 +78,6 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     width: '100%',
   },
-
   buttonContent: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -1,11 +1,15 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/AntDesign'; 
 
-const TitleBar = ({ title}) => {
+const TitleBar = ({ title, showIcon = true }) => {
   const navigation = useNavigation();
   const back = navigation.canGoBack();
+
+  const openSettings = () => {
+    navigation.navigate('ChangeLng')
+  };
 
   return (
     <View style={styles.contentTitleScreen}>
@@ -19,6 +23,11 @@ const TitleBar = ({ title}) => {
         <View style={styles.contentTitle}>
           <Text style={styles.titleScreen}>{title} </Text>
         </View>
+        {showIcon && (
+          <TouchableOpacity onPress={openSettings}>
+            <Icon name="setting" size={30} color="#000" style={styles.icon} />
+          </TouchableOpacity>
+        )}
       </View>
     </View >
   )

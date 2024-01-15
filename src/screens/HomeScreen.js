@@ -1,19 +1,22 @@
 import React from 'react'
 import { StyleSheet, Text, View, FlatList } from 'react-native'
-import Card from '../components/Card';
-import UseGetNews from '../hooks/UseGetNews';
-import TitleBar from '../components/TitleBar';
+import { useTranslation } from 'react-i18next';
 import SplashScreen from './SplashScreen';
+import Card from '../components/Card';
+import TitleBar from '../components/TitleBar'; 
+import UseGetNews from '../hooks/UseGetNews';
+
 
 const HomeScreen = ({ navigation }) => {
   const { data, isLoading } = UseGetNews();
+  const { t } = useTranslation();
 
-  if(isLoading){
-    return <SplashScreen/>
+  if (isLoading) {
+    return <SplashScreen />;
   }
   return (
     <View style={styles.layout}>
-      <TitleBar title={"Noticias del Mundo"} />
+      <TitleBar title={t('world-news')} />
       <FlatList
         data={data.articles}
         ItemSeparatorComponent={() => <Text> </Text>}
@@ -31,5 +34,4 @@ const styles = StyleSheet.create({
   layout: {
     flex: 1,
   },
-
 })

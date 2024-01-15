@@ -1,13 +1,14 @@
 import React from 'react'
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { useTranslation } from 'react-i18next';
 import TitleBar from '../components/TitleBar';
 
 const DetailScreen = ({ route }) => {
   const { author, title, description, content, urlToImage, publishedAt } = route.params
-
+  const { t } = useTranslation();
   return (
     <View style={styles.layout}>
-      <TitleBar title={"Detalle"} />
+      <TitleBar title={t('detail')} showIcon={false} />
       <View style={styles.contentDetail}>
         <ScrollView>
           <View style={styles.contentTitle}>
@@ -27,7 +28,7 @@ const DetailScreen = ({ route }) => {
             />
           </View>
           <View style={styles.contentAuthor}>
-            <Text style={styles.authors}>Por: {author} </Text>
+            <Text style={styles.authors}>{t('by')} {author} </Text>
           </View>
           <View style={styles.contentContent}>
             <Text style={styles.contents}>{content} </Text>
