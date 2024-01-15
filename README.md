@@ -1,6 +1,6 @@
 # Intrucciones
 
-## Paso 1: Instalar dependencias
+## Paso 1: Clonar el repositorio
 
 ```bash
 git clone https://github.com/osflores21/SPS_APP.git
