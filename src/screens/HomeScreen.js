@@ -3,10 +3,14 @@ import { StyleSheet, Text, View, FlatList } from 'react-native'
 import Card from '../components/Card';
 import UseGetNews from '../hooks/UseGetNews';
 import TitleBar from '../components/TitleBar';
+import SplashScreen from './SplashScreen';
 
 const HomeScreen = ({ navigation }) => {
   const { data, isLoading } = UseGetNews();
 
+  if(isLoading){
+    return <SplashScreen/>
+  }
   return (
     <View style={styles.layout}>
       <TitleBar title={"Noticias del Mundo"} />
