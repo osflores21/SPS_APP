@@ -36,4 +36,4 @@ La aplicacion se hizo con la ultima version de react native, tambien se recomien
 
 ## Nota 2
 
-Se sube la documentacion al repositorio, en caso de que sea necesario ver "paso a paso" el desarrollo del proyecto.
+Se sube la documentacion al repositorio "Documentation.md", en caso de que sea necesario ver el "paso a paso" del desarrollo del proyecto. (la carpeta Documentacion solo contiene imagenes).
