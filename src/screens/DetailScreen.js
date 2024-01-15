@@ -1,13 +1,13 @@
 import React from 'react'
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
-
+import TitleBar from '../components/TitleBar';
 
 const DetailScreen = ({ route }) => {
   const { author, title, description, content, urlToImage, publishedAt } = route.params
 
   return (
     <View style={styles.layout}>
-     <Text>Detalle</Text>
+      <TitleBar title={"Detalle"} />
       <View style={styles.contentDetail}>
         <ScrollView>
           <View style={styles.contentTitle}>
