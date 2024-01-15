@@ -22,7 +22,9 @@ const Card = ({ navigation, title, description, urlToImage, content, author, url
 
       <View style={styles.ReadMoreContainer}>
         <TouchableOpacity
-          onPress={() => { navigation.navigate('DetailScreen') }}
+          onPress={() => {
+            navigation.navigate("DetailScreen", { title, description, urlToImage, content, author, url, publishedAt });
+          }}
         >
           <View style={styles.buttonContent}>
             <Text style={styles.buttonText}>Leer más</Text>
