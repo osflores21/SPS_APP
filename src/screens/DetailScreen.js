@@ -28,7 +28,7 @@ const DetailScreen = ({ route }) => {
             />
           </View>
           <View style={styles.contentAuthor}>
-            <Text style={styles.authors}>{t('by')} {author} </Text>
+            <Text style={styles.authors}>{t('by')}{author} </Text>
           </View>
           <View style={styles.contentContent}>
             <Text style={styles.contents}>{content} </Text>
