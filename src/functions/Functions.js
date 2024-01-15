@@ -6,5 +6,9 @@ export const changeLanguage = (language, navigation) => {
         t('key');
     });
     navigation.pop(1)
+}
 
+export const formattedDate = (dateW) => {
+    const dateC = dateW.substring(0, 10);
+    return dateC
 }

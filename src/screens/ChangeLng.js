@@ -10,7 +10,7 @@ const ChangeLng = ({ navigation }) => {
 
   return (
     <View style={styles.layout}>
-      <TitleBar title={t('change-lenguage')} showIcon={false} navigation={navigation} />
+      <TitleBar title={t('settings')} showIcon={false} navigation={navigation} />
       <View style={styles.contentLng}>
         <View style={styles.contentItemsLng}>
           <View>
@@ -58,10 +58,4 @@ const styles = StyleSheet.create({
     padding: 40,
     width: "90%",
   },
-  icon: {
-    /*  margin: 5, */
-    /*  alignSelf: 'flex-end' */
-  },
-
-
 })

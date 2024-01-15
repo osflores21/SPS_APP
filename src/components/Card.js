@@ -2,9 +2,9 @@ import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign';
 import { useTranslation } from 'react-i18next';
+import { formattedDate } from '../functions/Functions';
 
 const Card = ({ navigation, title, description, urlToImage, content, author, url, publishedAt }) => {
-
   const { t } = useTranslation();
   return (
     <View style={styles.card}>
@@ -25,7 +25,7 @@ const Card = ({ navigation, title, description, urlToImage, content, author, url
       <View style={styles.ReadMoreContainer}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("DetailScreen", { title, description, urlToImage, content, author, url, publishedAt });
+            navigation.navigate("DetailScreen", { title, description, urlToImage, content, author, url, publishedAt: formattedDate(publishedAt) });
           }}
         >
           <View style={styles.buttonContent}>

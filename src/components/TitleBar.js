@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/AntDesign'; 
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const TitleBar = ({ title, showIcon = true }) => {
   const navigation = useNavigation();
@@ -13,21 +13,24 @@ const TitleBar = ({ title, showIcon = true }) => {
 
   return (
     <View style={styles.contentTitleScreen}>
-      <View style={styles.contentButtonSettings}>
-        {back && (
-          <TouchableOpacity onPress={() => { navigation.goBack() }}>
-            <Icon name="arrowleft" size={30} color="#000" style={styles.icon} />
-          </TouchableOpacity>
-        )}
-
+      <View style={styles.contentItem}>
+        <View style={styles.contentBack}>
+          {back && (
+            <TouchableOpacity onPress={() => { navigation.goBack() }}>
+              <Icon name="arrowleft" size={30} color="#000" style={styles.icon} />
+            </TouchableOpacity>
+          )}
+        </View>
         <View style={styles.contentTitle}>
           <Text style={styles.titleScreen}>{title} </Text>
         </View>
-        {showIcon && (
-          <TouchableOpacity onPress={openSettings}>
-            <Icon name="setting" size={30} color="#000" style={styles.icon} />
-          </TouchableOpacity>
-        )}
+        <View style={styles.contentSettings}>
+          {showIcon && (
+            <TouchableOpacity onPress={openSettings}>
+              <Icon name="setting" size={30} color="#000" style={styles.icon} />
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
     </View >
   )
@@ -47,13 +50,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#5555",
     width: "100%",
   },
-  contentButtonSettings: {
+  contentItem: {
     flexDirection: "row",
     alignItems: 'center',
+    width: "100%",
   },
   contentTitle: {
-    flex: 1,
     textAlign: 'center',
+    width: "80%",
+  },
+  contentBack: {
+    width: "10%",
+  },
+  contentSettings: {
+    width: "10%",
   },
   icon: {
     padding: 5,
