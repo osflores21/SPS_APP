@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
-
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const Card = ({ navigation, title, description, urlToImage, content, author, url, publishedAt }) => {
 
@@ -27,7 +27,8 @@ const Card = ({ navigation, title, description, urlToImage, content, author, url
           }}
         >
           <View style={styles.buttonContent}>
-            <Text style={styles.buttonText}>Leer más</Text>
+            <Text style={styles.buttonText}>Leer más </Text>
+            <Icon name="arrowright" size={20} color="#000" style={styles.icon} />
           </View>
         </TouchableOpacity>
       </View>
